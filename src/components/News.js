@@ -17,7 +17,7 @@ export default function News({ country, category }) {
         const url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=0dcf9e735f07495d96c39dacf059d0a5&page=${page}&pageSize=${pageSize}&category=${category}`;
         const response = await fetch(url);
         const data = await response.json();
-
+        console.log(data)
         if (data.articles && Array.isArray(data.articles) && data.articles.length > 0) {
           const articles = data.articles.map(article => ({
             title: article.title,
